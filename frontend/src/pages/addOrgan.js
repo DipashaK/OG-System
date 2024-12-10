@@ -108,10 +108,18 @@ const OrganDonorManager = () => {
     setIsModalOpen(false);
   };
 
-  const editDonor = (donor) => {
-    setNewDonor(donor);
-    setIsModalOpen(true);
-    setEmailError('');
+  const editDonor = async (id) => {
+    const token = localStorage.getItem('auth_token');
+    try {
+      await axios.put(`http://localhost:5000/api/donor/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      setDonors(donors.filter((donor) => donor._id !== id));
+      toast.success('Donor updated successfully!');
+    } catch (error) {
+      toast.error('Error updating donor.');
+      console.error(error);
+    }
   };
 
   const deleteDonor = async (id) => {
