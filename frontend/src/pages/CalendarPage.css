@@ -1,0 +1,27 @@
+/* Custom styles for React Big Calendar */
+.rbc-toolbar button {
+    color: gray; /* Set the text color to white */
+    background: transparent; /* Optional: remove the default button background */
+    border: none; /* Optional: remove button borders */
+  }
+  
+  .rbc-toolbar button:hover {
+    color: black; /* Change text color to light blue on hover */
+    cursor: pointer;
+  }
+  
+  .rbc-btn-group button:focus {
+    outline: none; /* Remove focus outline */
+  }
+  /* Override today's date background color */
+.rbc-today {
+    background-color: #4a5568 !important; /* Replace with a grayish color that suits the gray-900 background */
+    color: #fff !important; /* Ensure the text is readable */
+    border-radius: 5px; /* Optional: Add rounded corners */
+  }
+  
+  /* Adjust hover effect to make it blend with the new color scheme */
+  .rbc-today:hover {
+    background-color: #2d3748 !important; /* Slightly darker shade for hover */
+  }
+  

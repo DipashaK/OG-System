@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* styles.css or global.css */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensures the page uses full height */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-y: hidden; /* Prevent vertical scroll */
+  }
+  
+  .loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 0.8s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+
+  /* Add this to your global CSS file */
+@layer base {
+  /* Custom scrollbar styles */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #6366f1; /* Customize color */
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #1f2937; /* Dark background */
+  }
+
+  /* On hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #4c51bf;
+  }
+}
