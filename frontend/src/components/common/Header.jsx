@@ -1,26 +1,16 @@
-import { useState, useEffect } from "react";
-import { FaUserCircle } from "react-icons/fa";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Header = ({ title }) => {
   const [isLogoutVisible, setLogoutVisible] = useState(false);
-  const [userEmail, setUserEmail] = useState(null);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    // Retrieve email from local storage or API
-    const email = localStorage.getItem("userEmail"); // Replace this with appropriate logic
-    if (email) {
-      setUserEmail(email);
-    }
-  }, []);
 
   const toggleLogout = () => {
     setLogoutVisible((prev) => !prev);
   };
 
   const handleLogout = () => {
-    // Clear user session data
+    // Clear user session data (example: localStorage)
     localStorage.clear(); // Replace this with appropriate session management logic
     navigate("/"); // Redirect to home page
   };
@@ -33,28 +23,24 @@ const Header = ({ title }) => {
 
         {/* Profile Section */}
         <div className="relative">
-          {/* Profile Icon */}
+          {/* Profile Image */}
           <button
             onClick={toggleLogout}
-            className="text-white hover:text-gray-400 transition duration-200"
+            className="w-10 h-10 rounded-full overflow-hidden border-2 border-gray-300 hover:border-gray-400 transition duration-200"
           >
-            <FaUserCircle size={28} />
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt1MCkcc9N01BCt6q1G12dXL2np82d63podA&s"
+              alt="Profile"
+              className="w-full h-full object-cover"
+            />
           </button>
 
-          {/* Dropdown Menu */}
+          {/* Logout Button */}
           {isLogoutVisible && (
             <div
               className="absolute right-0 mt-2 z-50 bg-white rounded-lg shadow-lg p-2"
-              style={{ minWidth: "200px" }}
+              style={{ minWidth: "120px" }}
             >
-              {/* User Email */}
-              {userEmail && (
-                <div className="text-sm text-gray-700 px-4 py-2 border-b border-gray-200">
-                  <span className="font-medium">Email:</span> {userEmail}
-                </div>
-              )}
-
-              {/* Logout Button */}
               <button
                 onClick={handleLogout}
                 className="w-full text-left text-sm font-semibold text-red-600 px-4 py-2 hover:bg-red-100 rounded-lg"
