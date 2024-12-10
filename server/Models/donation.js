@@ -8,6 +8,7 @@ const donationSchema = new mongoose.Schema({
   organ: { type: String, required: true },
   bloodGroup: { type: String, required: true, enum: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'] },
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+  status: { type: String, default: "Pending" },
   matchedWith: { type: mongoose.Schema.Types.ObjectId, ref: 'Receiver' },
 });
 
