@@ -122,7 +122,7 @@ const SIDEBAR_ITEMS = [
   { name: "Track Organ", icon: Activity, color: "#10B981", href: "/track-organ" },
   { name: "Matching", icon: Activity, color: "#10B981", href: "/matching" },
   { name: "Calendar", icon: ClipboardList, color: "#F59E0B", href: "/calendar" },
-  { name: "Settings", icon: Settings, color: "#6EE7B7", href: "/settings" },
+  // { name: "Settings", icon: Settings, color: "#6EE7B7", href: "/settings" },
 ];
 
 const Sidebar = () => {
