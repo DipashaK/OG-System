@@ -10,20 +10,15 @@ const Header = ({ title }) => {
   };
 
   const handleLogout = () => {
-    // Clear user session data (example: localStorage)
-    localStorage.clear(); // Replace this with appropriate session management logic
-    navigate("/"); // Redirect to home page
+    localStorage.clear(); 
+    navigate("/"); 
   };
 
   return (
     <header className="bg-gray-800 bg-opacity-50 backdrop-blur-md shadow-lg border-b border-gray-700 relative">
       <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-4 sm:px-6 lg:px-8">
-        {/* Title */}
         <h1 className="text-2xl font-semibold text-white">{title}</h1>
-
-        {/* Profile Section */}
         <div className="relative">
-          {/* Profile Image */}
           <button
             onClick={toggleLogout}
             className="w-10 h-10 rounded-full overflow-hidden border-2 border-gray-300 hover:border-gray-400 transition duration-200"
@@ -34,8 +29,6 @@ const Header = ({ title }) => {
               className="w-full h-full object-cover"
             />
           </button>
-
-          {/* Logout Button */}
           {isLogoutVisible && (
             <div
               className="absolute right-0 mt-2 z-50 bg-white rounded-lg shadow-lg p-2"
