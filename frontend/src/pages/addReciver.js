@@ -53,7 +53,7 @@ const OrganReceiverManager = () => {
       setReceivers(response.data); // Assuming the API returns an array of receivers
       console.log('Receivers fetched successfully:', response.data);
     } catch (error) {
-      toast.error('Error fetching receivers.');
+      toast.error('No recievers found.');
       console.error(error);
     } finally {
       setLoading(false); // Stop loading
